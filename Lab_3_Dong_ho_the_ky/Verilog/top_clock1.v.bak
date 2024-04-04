@@ -11,16 +11,15 @@ module top_clock1(
 
     initial begin
         counter = 0;
-        tick_s = 1;
+        tick_s = 0;
     end
 
     always @(posedge clk) begin
-        if (counter == 25'd49999999) begin
-            counter <= 0;
-            tick_s <= 1;
+        if (counter == 0) begin
+            counter <= 24999999;
+            tick_s <= ~tick_s;
         end else begin
-            counter <= counter + 1;
-            tick_s <= 0;
+            counter <= counter - 1;
         end
     end
 
@@ -47,42 +46,34 @@ module top_clock1(
 
     count_min dutmin(
         .clk(tick_s),
-        .rst_n(rst_n),
         .set_min(set_min),
         .pulse_min(pulse_min),
-
         .pulse_h(pulse_h),
         .cnt_min(cnt_min)
     );
 
     count_h duth(
         .clk(tick_s),
-        .rst_n(rst_n),
         .set_h(set_h),
         .pulse_h(pulse_h),
-
         .pulse_d(pulse_d),
         .cnt_h(cnt_h)
     );
 
     count_d dutd(
         .clk(tick_s),
-        .rst_n(rst_n),
         .set_d(set_d),
         .cnt_mon(cnt_mon),
         .cnt_y(cnt_y),
         .pulse_d(pulse_d),
-
         .pulse_mon(pulse_mon),
         .cnt_d(cnt_d)
     );
 
     count_mon dutmon(
         .clk(tick_s),
-        .rst_n(rst_n),
         .set_mon(set_mon),
         .pulse_mon(pulse_mon),
-        
         .pulse_y(pulse_y),
         .cnt_mon(cnt_mon)
     );

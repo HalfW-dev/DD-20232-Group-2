@@ -12,7 +12,7 @@ module count_s(
       if(~rst_n) begin 
         cnt_s <= 0;
       end
-      else if(set_s) begin
+      else if(~set_s) begin
         cnt_s <= cnt_s + 1;
       end
       else if (tick_s) begin
