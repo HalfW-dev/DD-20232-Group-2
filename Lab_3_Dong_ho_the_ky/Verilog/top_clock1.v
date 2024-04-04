@@ -1,22 +1,23 @@
 module top_clock1(
     input clk,
+    input rst_n,
     input switch, 
     input set_s, set_min, set_h, set_d, set_mon, set_y,
     output reg [41:0] segment
 );
 
-    reg clk_1s;
+    reg tick_s;
     reg [24:0] counter;
 
     initial begin
         counter = 0;
-        clk_1s = 0;
+        tick_s = 0;
     end
 
     always @(posedge clk) begin
         if (counter == 0) begin
             counter <= 149;
-            clk_1s <= ~clk_1s;
+            tick_s <= ~tick_s;
         end else begin
             counter <= counter - 1;
         end
@@ -34,8 +35,11 @@ module top_clock1(
     wire [41:0] seg2;
 
     count_s duts(
-        .clk(clk_1s),
+        .clk(clk),
+        .tick_s(tick_s),
+        .rst_n(rst_n),
         .set_s(set_s),
+
         .pulse_min(pulse_min),
         .cnt_s(cnt_s)
     );
