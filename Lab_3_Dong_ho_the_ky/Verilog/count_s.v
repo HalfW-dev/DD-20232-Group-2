@@ -7,7 +7,7 @@ module count_s(
 
     always @(posedge clk or negedge set_s) begin
       if(~set_s) begin 
-        cnt_s <= 0; 
+        cnt_s <= 0;
       end
         else begin
           if (cnt_s == 59) begin

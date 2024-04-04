@@ -5,6 +5,24 @@ module top_clock1(
     output reg [41:0] segment
 );
 
+    reg clk_1s;
+    reg [24:0] counter;
+
+    initial begin
+        counter = 0;
+        clk_1s = 0;
+    end
+
+    always @(posedge clk) begin
+        if (counter == 0) begin
+            counter <= 149;
+            clk_1s <= ~clk_1s;
+        end else begin
+            counter <= counter - 1;
+        end
+    end
+
+
     wire pulse_min, pulse_h, pulse_d, pulse_mon, pulse_y;
     wire [5:0] cnt_s; 
     wire [5:0] cnt_min;
@@ -16,14 +34,14 @@ module top_clock1(
     wire [41:0] seg2;
 
     count_s duts(
-        .clk(clk),
+        .clk(clk_1s),
         .set_s(set_s),
         .pulse_min(pulse_min),
         .cnt_s(cnt_s)
     );
 
     count_min dutmin(
-        .clk(clk),
+        .clk(clk_1s),
         .set_min(set_min),
         .pulse_min(pulse_min),
         .pulse_h(pulse_h),
@@ -31,7 +49,7 @@ module top_clock1(
     );
 
     count_h duth(
-        .clk(clk),
+        .clk(clk_1s),
         .set_h(set_h),
         .pulse_h(pulse_h),
         .pulse_d(pulse_d),
@@ -39,7 +57,7 @@ module top_clock1(
     );
 
     count_d dutd(
-        .clk(clk),
+        .clk(clk_1s),
         .set_d(set_d),
         .cnt_mon(cnt_mon),
         .cnt_y(cnt_y),
@@ -49,7 +67,7 @@ module top_clock1(
     );
 
     count_mon dutmon(
-        .clk(clk),
+        .clk(clk_1s),
         .set_mon(set_mon),
         .pulse_mon(pulse_mon),
         .pulse_y(pulse_y),
@@ -57,7 +75,7 @@ module top_clock1(
     );
 
     count_y duty(
-        .clk(clk),
+        .clk(clk_1s),
         .set_y(set_y),
         .pulse_y(pulse_y),
         .cnt_y(cnt_y)
@@ -65,17 +83,17 @@ module top_clock1(
 
     led_s ds(
         .cnt_s(cnt_s),
-        .seg(seg1[13:0])
+        .seg(seg1[13:0]) //HEX3, HEX2
     );
 
     led_min dmin(
         .cnt_min(cnt_min),
-        .seg(seg1[27:14])
+        .seg(seg1[27:14]) //HEX5, HEX4
     );
 
     led_h dh (
         .cnt_h(cnt_h),
-        .seg(seg1[41:28])
+        .seg(seg1[41:28]) //HEX7, HEX6
     );
 
     led_d dd(

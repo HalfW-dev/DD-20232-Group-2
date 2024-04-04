@@ -5,7 +5,7 @@ module led_mon(
 
 always @(cnt_mon) begin
     case (cnt_mon)
-        //0 : seg = 14'b0000001_0000001; // 00
+        0 : seg = 14'b0000001_0000001; // 00
         1 : seg = 14'b0000001_1001111; // 01
         2 : seg = 14'b0000001_0010010; // 02
         3 : seg = 14'b0000001_0000110; // 03
@@ -18,7 +18,7 @@ always @(cnt_mon) begin
         10 : seg = 14'b1001111_0000001; // 10
         11 : seg = 14'b1001111_1001111; // 11
         12 : seg = 14'b1001111_0010010; // 12
-        default seg = 14'b1111111_1111111; 
+        default seg = 14'b0000000_0000000;  
         endcase
     end
 endmodule

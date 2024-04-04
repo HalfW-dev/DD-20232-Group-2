@@ -14,9 +14,9 @@ module count_mon(
 always @(posedge clk or negedge set_mon) begin
 
   if (~set_mon) begin
-    cnt_mon <= 0;
+    cnt_mon <= 1;
     pulse_y <= 0;
-    end
+  end
   else begin
     if (~pulse_mon) 
     begin
@@ -29,7 +29,7 @@ always @(posedge clk or negedge set_mon) begin
           pulse_y <= 1;
         end
         else begin
-          cnt_mon <= cnt_mon;
+          cnt_mon <= cnt_mon + 1;
           pulse_y <= 0;
         end
   end
