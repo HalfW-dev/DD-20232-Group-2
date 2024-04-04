@@ -1,0 +1,189 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "segment[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[6]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[8]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[9]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[10]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[11]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[12]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[13]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[14]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[15]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[16]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[17]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[18]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[19]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[20]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[22]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[23]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[24]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[25]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[26]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[27]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[28]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[29]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[30]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[31]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[32]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[33]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[34]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[36]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[37]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[38]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[39]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[40]",
+					"strict" : false
+				},
+				{
+					"name" : "segment[41]",
+					"strict" : false
+				},
+				{
+					"name" : "switch",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "set_s",
+					"strict" : false
+				},
+				{
+					"name" : "set_d",
+					"strict" : false
+				},
+				{
+					"name" : "set_min",
+					"strict" : false
+				},
+				{
+					"name" : "set_h",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
